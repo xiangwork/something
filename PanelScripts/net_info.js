@@ -15,14 +15,14 @@ while(allGroup.includes(rootName)==true){
 	rootName = (await httpAPI("/v1/policy_groups/select?group_name="+encodeURIComponent(rootName)+"")).policy;
 }
 
-$httpClient.get('http://ip-api.com/json/?lang=en', function (error, response, data) {
+$httpClient.get('http://ip-api.com/json/?lang=zh-CNs', function (error, response, data) {
     const jsonData = JSON.parse(data);
     $done({
       title:rootName,
       content:
-		`國家地區: ${jsonData.country} - ${jsonData.city}\n`+
-      `運營商 : ${jsonData.isp}\n` +
-		`數據中心: ${jsonData.org}`,
+		`国家地区: ${jsonData.country} - ${jsonData.city}\n`+
+      `运营商 : ${jsonData.isp}\n` +
+		`数据中心: ${jsonData.org}`,
       icon: params.icon,
 		  "icon-color":params.color
     });
