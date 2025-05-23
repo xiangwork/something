@@ -5,6 +5,7 @@
 let params = getParams($argument)
 //获取根节点名
 let proxy = await httpAPI("/v1/policy_groups");
+console.log(proxy,'==============')
 let allGroup = [];
 for (var key in proxy){
    allGroup.push(key)
